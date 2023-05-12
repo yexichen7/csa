@@ -11,7 +11,8 @@ func InitRouter() {
 
 	r.POST("/register", register) // 注册
 	r.POST("/login", login)       // 登录
-	r.POST("/change", change)     //修改密码
+	r.POST("/change", change)
+	r.POST("question", findPassword) //修改密码
 	UserRouter := r.Group("/user")
 	{
 		UserRouter.Use(middleware.JWTAuthMiddleware())
